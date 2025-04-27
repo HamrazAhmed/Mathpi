@@ -6,6 +6,7 @@ export async function middleware(req: NextRequest) {
   const authHeader = req.headers.get("authorization");
 
   // Redirect /chat to /chat-history
+  
   if (url.pathname === "/dashboard/chat") {
     return NextResponse.redirect(new URL("/dashboard/chat-history", req.url));
   }
